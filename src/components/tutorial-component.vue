@@ -9,7 +9,7 @@
     <input type="date">
 
 
-    <label for="count" for="quantity">Quantity:</label>
+    <label  for="quantity">Quantity:</label>
     <input type="number" id="quantity">
 
     <img src="cat.jpg" alt="this image show a cat " aria-roledescription="click here to go the datails of the cat">
