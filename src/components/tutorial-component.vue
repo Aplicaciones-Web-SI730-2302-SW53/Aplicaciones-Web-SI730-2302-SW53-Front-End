@@ -1,5 +1,8 @@
 <template>
-    <label class="title">{{title}}</label>
+    <label class="title" aria-roledescription="title">{{$t('tutorial')}} {{title}}</label>
+
+    <label for="contador">Count:</label>
+    <input type="text" id="contador">
 </template>
 
 <script>
