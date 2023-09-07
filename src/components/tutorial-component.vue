@@ -11,8 +11,11 @@
 
     <label  for="quantity">Quantity:</label>
     <input type="number" id="quantity">
+    <pv-input-text type="text" />
 
     <img src="cat.jpg" alt="this image show a cat " aria-roledescription="click here to go the datails of the cat">
+    <button>Click</button>
+    <pv-button>Click PrimeVue</pv-button>
 </template>
 
 <script>
