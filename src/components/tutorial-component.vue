@@ -1,20 +1,22 @@
 <template>
+
     <label class="title" aria-roledescription="title">{{$t('tutorial')}} {{title}}</label>
 
-    <label for="count">Count:</label>
-    <input type="text" id="count" aria-label="This field is for the quantity of tutorials on stock">
+    <div class="row">
+        <label for="count">Count:</label>
+        <input type="text" id="count" aria-label="This field is for the quantity of tutorials on stock">
+    </div>
 
+    <div class="row">
+        <label for="count">date of expiration:</label>
+        <pv-calendar v-model="data" />
+    </div>
 
-    <label for="count">date of expiration:</label>
-    <input type="date">
+    <div class="row">
+        <label  for="quantity">Quantity:</label>
+        <pv-input-text type="text"  class="input-text" />
+    </div>
 
-
-    <label  for="quantity">Quantity:</label>
-    <input type="number" id="quantity">
-    <pv-input-text type="text" />
-
-    <img src="cat.jpg" alt="this image show a cat " aria-roledescription="click here to go the datails of the cat">
-    <button>Click</button>
     <pv-button>Click PrimeVue</pv-button>
 </template>
 
@@ -23,12 +25,29 @@ export default {
     props: {
         title: String
     },
-    name: "tutorial"
+    name: "tutorial",
+    data(){
+        return{
+            data : new Date('01/01/2023')
+        }
+    }
 }
 </script>
 
 <style scoped>
 .title{
     font-style: italic;
+}
+.input-text{
+    color:red;
+    font-size: large;
+}
+.row{
+    margin: 8px;
+    display:flex;
+    flex-direction: row;
+}
+.row label{
+    width: 100px;
 }
 </style>

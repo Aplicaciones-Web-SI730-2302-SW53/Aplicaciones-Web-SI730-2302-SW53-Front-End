@@ -28,8 +28,6 @@ export default {
 .container{
     display: flex;
     flex-direction: column;
-    border: #222222;
-    background-color: aquamarine;
     margin: 8px;
     padding: 8px;
 }

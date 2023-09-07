@@ -11,6 +11,7 @@ import 'primeicons/primeicons.css' //icons
 
 import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
+import Calendar from 'primevue/calendar';
 
 
 const i18n =  createI18n({
@@ -41,5 +42,6 @@ app.use(PrimeVue);
 
 app.component('pv-button',Button)
 app.component('pv-input-text',InputText)
+app.component('pv-calendar',Calendar)
 
 app.mount('#app')
