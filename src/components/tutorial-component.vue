@@ -1,53 +1,76 @@
 <template>
+  >
+  <div class="flex flex-column lg:flex-row">
+    <label aria-roledescription="title" class="title"
+      >{{ $t("tutorial") }} {{ title }}</label
+    >
 
-    <label class="title" aria-roledescription="title">{{$t('tutorial')}} {{title}}</label>
-
-    <div class="row">
-        <label for="count">Count:</label>
-        <input type="text" id="count" aria-label="This field is for the quantity of tutorials on stock">
+    <div class="flex flex-row-reverse justify-content-center">
+      <label for="count">Count:</label>
+      <input
+        id="count"
+        aria-label="This field is for the quantity of tutorials on stock"
+        type="text"
+      />
     </div>
+    <label for="count">date of expiration:</label>
+    <pv-calendar v-model="data" />
 
-    <div class="row">
-        <label for="count">date of expiration:</label>
-        <pv-calendar v-model="data" />
-    </div>
-
-    <div class="row">
-        <label  for="quantity">Quantity:</label>
-        <pv-input-text type="text"  class="input-text" />
-    </div>
+    <label for="quantity">Quantity:</label>
+    <pv-input-text class="input-text" type="text" />
 
     <pv-button>Click PrimeVue</pv-button>
+  </div>
 </template>
 
 <script>
 export default {
-    props: {
-        title: String
+  props: {
+    title: String,
+  },
+  name: "tutorial",
+  data() {
+    return {
+      data: new Date("01/01/2023"),
+    };
+  },
+  methods: {
+    pay(amount, id, name) {
+      const factorTax = 0.18;
+      let total = amount + amount * factorTax;
+      //TODO Add new taxes ISC
+
+      if (total === 0) {
+        total = 10;
+        return total;
+      }
+      return total;
     },
-    name: "tutorial",
-    data(){
-        return{
-            data : new Date('01/01/2023')
-        }
-    }
-}
+  },
+};
 </script>
 
 <style scoped>
-.title{
-    font-style: italic;
+/*.container {
+  display: flex;
+  flex-direction: column;
 }
-.input-text{
-    color:red;
-    font-size: large;
+
+.container-child {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+}*/
+.title {
+  font-style: italic;
 }
-.row{
-    margin: 8px;
-    display:flex;
-    flex-direction: row;
+
+.input-text {
+  color: red;
+  font-size: large;
 }
-.row label{
-    width: 100px;
+
+.row label {
+  width: 100px;
 }
 </style>

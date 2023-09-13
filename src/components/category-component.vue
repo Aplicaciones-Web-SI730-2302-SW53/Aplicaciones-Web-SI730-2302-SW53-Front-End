@@ -2,11 +2,11 @@
     <div class="container">
       <label class="name"> {{ $t('Category')}} {{name}} </label>
       <label>{{content}}</label>
-      <ul>
-        <li v-for="tutorial in tutorials">
-            <tutorial :title="tutorial.title" />
-        </li>
-      </ul>
+
+    <div v-for="tutorial in tutorials">
+        <tutorial :title="tutorial.title" />
+
+         </div>
   </div>
 </template>
 
