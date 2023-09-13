@@ -13,6 +13,7 @@ import categoryComponent from "@/components/category-component.vue";
 import tutorialComponent from "@/components/tutorial-component.vue";
 import homeComponent from "@/components/home.component.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
+import notFoundComponent from "@/components/not-found.component.vue";
 
 const i18n = createI18n({
   locale: "es",
@@ -39,6 +40,7 @@ const routes = [
   { path: "/", component: homeComponent },
   { path: "/category", component: categoryComponent },
   { path: "/tutorial", component: tutorialComponent },
+  { path: "/:pathMatch(.*)*", component: notFoundComponent },
 ];
 
 const router = createRouter({
