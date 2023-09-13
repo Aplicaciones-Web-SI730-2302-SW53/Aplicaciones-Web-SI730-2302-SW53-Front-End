@@ -18,4 +18,17 @@
 header {
   line-height: 1.5;
 }
+
+nav {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  background-color: beige;
+  font-size: larger;
+}
+
+main {
+  background-color: azure;
+  justify-content: center;
+}
 </style>
