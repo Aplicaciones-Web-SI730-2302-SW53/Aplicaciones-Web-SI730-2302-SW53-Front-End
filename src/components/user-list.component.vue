@@ -7,7 +7,13 @@
   <pv-button @click="refresh()">Refresh</pv-button>
 
   <div v-for="user in users">
-    <div>{{ user.id + " - " + user.name }}</div>
+    <div>
+      {{ user.id + " - " + user.name }}
+
+      <router-link :to="{ name: 'updateUser', params: { id: user.id } }">
+        update
+      </router-link>
+    </div>
   </div>
 </template>
 
