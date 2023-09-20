@@ -1,5 +1,6 @@
 <template>
   <label>Lis of users</label>
+  <router-link to="/create-user">Create User</router-link>
 
   <pv-input-text v-model="start" type="number">Start</pv-input-text>
   <pv-input-text v-model="end" type="number">End</pv-input-text>
