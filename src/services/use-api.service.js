@@ -1,41 +1,40 @@
 import axios from "axios";
 
+const http = axios.create({
+  baseURL: "https://jsonplaceholder.typicode.com",
+});
+
 class UseApiService {
   getAll() {
     /*return fetch("https://jsonplaceholder.typicode.com/users")
-                                                                                  .then((response) => response.json())
-                                                                                  .then((json) => (this.users = json));*/
+                                                                                                                  .then((response) => response.json())
+                                                                                                                  .then((json) => (this.users = json));*/
 
-    return axios.get("https://jsonplaceholder.typicode.com/users");
+    return http.get("users");
   }
 
   getByRange(start, limit) {
     /*return fetch("https://jsonplaceholder.typicode.com/users")
-                                                                                  .then((response) => response.json())
-                                                                                  .then((json) => (this.users = json));*/
+                                                                                                                  .then((response) => response.json())
+                                                                                                                  .then((json) => (this.users = json));*/
 
-    return axios.get(
-      "https://jsonplaceholder.typicode.com/users?_start=" +
-        start +
-        "&_limit=" +
-        limit,
-    );
+    return http.get("users?_start=" + start + "&_limit=" + limit);
   }
 
   getByid(id) {
-    return axios.get("https://jsonplaceholder.typicode.com/users/" + id);
+    return http.get("users/" + id);
   }
 
   create(body) {
-    return axios.post("https://jsonplaceholder.typicode.com/users", body);
+    return http.post("users", body);
   }
 
   update(id, body) {
-    return axios.put("https://jsonplaceholder.typicode.com/users/" + id, body);
+    return http.put("users/" + id, body);
   }
 
   delete(id) {
-    return axios.delete("https://jsonplaceholder.typicode.com/users/" + id);
+    return http.delete("users/" + id);
   }
 }
 
