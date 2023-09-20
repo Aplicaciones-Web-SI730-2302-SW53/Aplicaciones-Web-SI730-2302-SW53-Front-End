@@ -13,6 +13,7 @@
       <router-link :to="{ name: 'updateUser', params: { id: user.id } }">
         update
       </router-link>
+      <pv-button label="Delete" @click="deleteUser(user.id)"></pv-button>
     </div>
   </div>
 </template>
@@ -27,18 +28,28 @@ export default {
       users: [],
       start: 0,
       end: 10,
+      useApiService: new UseApiService(),
     };
   },
   async mounted() {
-    new UseApiService()
+    this.useApiService
       .getAll()
       .then((response) => (this.users = response.data));
   },
   methods: {
     refresh() {
-      new UseApiService()
+      this.useApiService
         .getByRange(this.start, this.end)
         .then((response) => (this.users = response.data));
+    },
+    deleteUser(id) {
+      this.useApiService
+        .delete(id)
+        .then((response) => {
+          if (response.status === 200) alert("user deleted");
+          else alert("Error trying to delete user");
+        })
+        .catch((error) => alert("Error"));
     },
   },
 };

@@ -3,16 +3,16 @@ import axios from "axios";
 class UseApiService {
   getAll() {
     /*return fetch("https://jsonplaceholder.typicode.com/users")
-                                                                  .then((response) => response.json())
-                                                                  .then((json) => (this.users = json));*/
+                                                                                  .then((response) => response.json())
+                                                                                  .then((json) => (this.users = json));*/
 
     return axios.get("https://jsonplaceholder.typicode.com/users");
   }
 
   getByRange(start, limit) {
     /*return fetch("https://jsonplaceholder.typicode.com/users")
-                                                                  .then((response) => response.json())
-                                                                  .then((json) => (this.users = json));*/
+                                                                                  .then((response) => response.json())
+                                                                                  .then((json) => (this.users = json));*/
 
     return axios.get(
       "https://jsonplaceholder.typicode.com/users?_start=" +
@@ -32,6 +32,10 @@ class UseApiService {
 
   update(id, body) {
     return axios.put("https://jsonplaceholder.typicode.com/users/" + id, body);
+  }
+
+  delete(id) {
+    return axios.delete("https://jsonplaceholder.typicode.com/users/" + id);
   }
 }
 
