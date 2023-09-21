@@ -29,7 +29,7 @@ nav {
 }
 
 main {
-  background-color: azure;
+  background-color: palevioletred;
   justify-content: center;
 }
 </style>
