@@ -8,7 +8,7 @@
 
   <div v-for="user in users">
     <div>
-      {{ user.id + " - " + user.name }}
+      {{ user.id + " - " + user.email }}
 
       <router-link :to="{ name: 'updateUser', params: { id: user.id } }">
         update

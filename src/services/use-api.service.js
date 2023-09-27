@@ -1,25 +1,28 @@
 import axios from "axios";
 
 const http = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: "http://localhost:3000/640",
+  headers: {
+    Authorization: "Bearer " + sessionStorage.getItem("accessToken"),
+  },
 });
 
 class UseApiService {
   getAll() {
     /*return fetch("https://jsonplaceholder.typicode.com/users")
-                                                                                                                      .then((response) => response.json())
-                                                                                                                      .then((json) => (this.users = json));*/
+                                                                                                                                                              .then((response) => response.json())
+                                                                                                                                                              .then((json) => (this.users = json));*/
 
     return http.get("users");
   }
 
   getByRange(start, limit) {
     /*return fetch("https://jsonplaceholder.typicode.com/users")
-                                                                                                                      .then((response) => response.json())
-                                                                                                                      .then((json) => (this.users = json));*/
+                                                                                                                                                              .then((response) => response.json())
+                                                                                                                                                              .then((json) => (this.users = json));*/
 
-    // return http.get("users?_start=" + start + "&_limit=" + limit);
-    return [{ id: 1 }, { id: 2, name: 1 }];
+    return http.get("users?_start=" + start + "&_limit=" + limit);
+    // return [{ id: 1 }, { id: 2, name: 1 }];
   }
 
   getByid(id) {

@@ -11,14 +11,6 @@ header {
   line-height: 1.5;
 }
 
-nav {
-  display: flex;
-  gap: 7px;
-  justify-content: center;
-  background-color: beige;
-  font-size: larger;
-}
-
 main {
   justify-content: center;
   align-items: center;

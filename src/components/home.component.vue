@@ -17,4 +17,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+nav {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  background-color: beige;
+  font-size: larger;
+}
+</style>

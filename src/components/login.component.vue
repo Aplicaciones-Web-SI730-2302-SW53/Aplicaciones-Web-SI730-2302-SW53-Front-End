@@ -28,6 +28,7 @@ export default {
 
       this.securityApi.login(this.email, this.password).then((response) => {
         if (response.data.accessToken) {
+          sessionStorage.setItem("accessToken", response.data.accessToken);
           this.$router.push("/home");
         } else {
           alert("invalid user");
