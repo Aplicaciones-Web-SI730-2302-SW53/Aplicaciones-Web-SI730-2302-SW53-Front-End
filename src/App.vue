@@ -1,15 +1,6 @@
 <script setup></script>
 
 <template>
-  <header>
-    <label> {{ $t("greet", { username: "Pedro" }) }}</label>
-  </header>
-  <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/category">Category</router-link>
-    <router-link to="/tutorial">Tutorial</router-link>
-    <router-link to="/users">Users</router-link>
-  </nav>
   <main>
     <router-view></router-view>
   </main>
@@ -29,7 +20,9 @@ nav {
 }
 
 main {
-  background-color: palevioletred;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
 }
 </style>
